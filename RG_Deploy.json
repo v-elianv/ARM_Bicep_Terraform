@@ -1,0 +1,31 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "rgName": {
+            "type": "string",
+            "defaultValue": "rg-dev"
+        },
+        "rgLocation": {
+            "type": "string",
+            "defaultValue": "East US"
+ 
+        },
+        "tags": {
+            "type": "object",
+            "defaultValue": {}
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Resources/resourceGroups",
+            "apiVersion": "2022-09-01",
+            "location": "[parameters('rgLocation')]",
+            "name": "[parameters('rgName')]",
+            "properties": {},
+            "tags": "[parameters('tags')]"
+        }
+    ],
+    "outputs": {}
+}
